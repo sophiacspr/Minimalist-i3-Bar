@@ -43,7 +43,7 @@ rm -rf "$TARGET_DIR"
 mkdir -p "$TARGET_DIR"
 
 cp -r "$REPO_DIR/blocks" "$TARGET_DIR/"
-cp "$REPO_DIR/config/i3blocks.conf" "$TARGET_DIR/"
+cp "$REPO_DIR/i3blocks.conf" "$TARGET_DIR/"
 
 chmod +x "$TARGET_DIR/blocks/"*.sh
 
