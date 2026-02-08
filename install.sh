@@ -60,12 +60,14 @@ EOF
 
 echo "[5/6] Injecting i3 bar config..."
 
-if ! grep -q "i3blocks-unified START" "$I3_CONFIG"; then
-cat >> "$I3_CONFIG" <<EOF
-
 SNIPPET_FILE="$REPO_DIR/config/i3bar_snippet.conf"
 
 echo "[5/6] Injecting i3 bar config..."
+
+if [ ! -f "$SNIPPET_FILE" ]; then
+  echo "Error: missing snippet file: $SNIPPET_FILE"
+  exit 1
+fi
 
 if ! grep -q "i3blocks-unified START" "$I3_CONFIG"; then
     {
