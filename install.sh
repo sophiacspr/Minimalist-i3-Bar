@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
-SCRIPT_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && pwd)"
-REQ_FILE="$SCRIPT_DIR/requirements.apt"
+
+SCRIPT_PATH="$(realpath "$0")"
+REPO_DIR="$(dirname "$SCRIPT_PATH")"
+
+REQ_FILE="$REPO_DIR/requirements.apt"
 
 TARGET_DIR="$HOME/.config/i3blocks-unified"
 I3_CONFIG="$HOME/.config/i3/config"
