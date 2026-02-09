@@ -1,6 +1,6 @@
 #!/bin/bash
-set -euo pipefail
-exec 2>/dev/null
+
+
 
 SINK='@DEFAULT_AUDIO_SINK@'
 
