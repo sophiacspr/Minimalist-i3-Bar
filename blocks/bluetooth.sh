@@ -1,6 +1,6 @@
 #!/bin/bash
-set -euo pipefail
-exec 2>/dev/null
+
+
 
 # check if bluetoothctl is available
 if ! command -v bluetoothctl >/dev/null; then

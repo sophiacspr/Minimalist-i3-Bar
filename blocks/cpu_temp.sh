@@ -1,6 +1,6 @@
 #!/bin/bash
-set -euo pipefail
-exec 2>/dev/null
+
+
 
 # dependency check
 if ! command -v sensors >/dev/null; then

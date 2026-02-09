@@ -1,6 +1,6 @@
 #!/bin/bash
-set -euo pipefail
-exec 2>/dev/null
+
+
 
 # First snapshot
 read -r cpu user nice system idle iowait irq softirq steal _ < /proc/stat

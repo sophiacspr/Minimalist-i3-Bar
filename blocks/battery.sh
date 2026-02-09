@@ -1,6 +1,6 @@
 #!/bin/bash
-set -euo pipefail
-exec 2>/dev/null
+
+
 
 ENV_FILE="$HOME/.config/i3blocks-unified/i3blocks.env"
 if [ -f "$ENV_FILE" ]; then
@@ -46,22 +46,13 @@ if ! [[ "$capacity" =~ ^[0-9]+$ ]]; then
     exit 0
 fi
 
-# output
-case "$status" in
-    Charging)
-        echo "${capacity}%🔌 (${profile})"
-        ;;
-    Discharging)
-        if [ "$capacity" -lt 20 ]; then
-            echo "${capacity}%🪫 (${profile})"
-        else
-            echo "${capacity}%🔋 (${profile})"
-        fi
-        ;;
-    Full)
-        echo "${capacity}%⚡ (${profile})"
-        ;;
-    *)
-        echo "${capacity}% (${profile})"
-        ;;
-esac
+# update status 
+if [ "$status" = "Charging" ]; then
+    echo "${capacity}%🔌 (${profile})"
+else
+    if [ "$capacity" -lt 20 ]; then
+        echo "${capacity}%🪫 (${profile})"
+    else
+        echo "${capacity}%🔋 (${profile})"
+    fi
+fi
