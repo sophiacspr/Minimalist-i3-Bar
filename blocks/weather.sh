@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Test"
-exit 0 
 # dependency check: curl and jq
 for cmd in curl jq; do
     if ! command -v "$cmd" >/dev/null; then
