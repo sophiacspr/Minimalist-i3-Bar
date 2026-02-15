@@ -69,6 +69,7 @@ lm-sensors
 power-profiles-daemon
 bluez
 procps
+playerctl
 
 # for gui
 blueman
