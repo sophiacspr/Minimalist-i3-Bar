@@ -34,13 +34,14 @@ fi
 #  get connected devices
 # extract lines with connected devices
 device_lines="$(bluetoothctl devices Connected 2>/dev/null)"
+
 # extract device names
 device_names="$(
     echo "$device_lines" |
     cut -d ' ' -f 3- # split at space and third field onwards (remove "Device XX:XX:XX:XX:XX:XX")
 )"
 # remove leading whitespaces from the names 
-device_names="$(echo "$device_names" | sed 's/^[[:space:]]*/')" # ^ matches start
+device_names="$(echo "$device_names" | sed 's/^[[:space:]]*//')" # ^ matches start
 # remove trailing whitespaces from the names
 device_names="$(echo "$device_names" | sed 's/[[:space:]]*$//')" # $ matches end
 
