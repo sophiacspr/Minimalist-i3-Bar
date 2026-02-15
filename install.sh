@@ -17,7 +17,7 @@ if [ ! -f "$REQ_FILE" ]; then
   exit 1
 fi
 
-echo "[1/7] Installing dependencies..."
+echo "[1/6] Installing dependencies..."
 
 sudo apt update
 
@@ -26,7 +26,7 @@ PACKAGES=$(grep -vE '^\s*#|^\s*$' "$REQ_FILE")
 sudo apt install -y $PACKAGES
 
 
-echo "[2/7] Backing up existing configs..."
+echo "[2/6] Backing up existing configs..."
 
 BACKUP_DIR="$HOME/.config/i3blocks-unified-backups/$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$BACKUP_DIR"
@@ -40,7 +40,7 @@ if [ -f "$I3_CONFIG" ]; then
   cp "$I3_CONFIG" "$BACKUP_DIR/i3-config.bak"
 fi
 
-echo "[3/7] Copying files..."
+echo "[3/6] Copying files..."
 
 # replace existing i3blocks-unified config with the new one
 rm -rf "$TARGET_DIR"
@@ -53,7 +53,7 @@ cp "$REPO_DIR/i3blocks.conf" "$TARGET_DIR/"
 # make the block scripts executable
 chmod +x "$TARGET_DIR/blocks/"*.sh
 
-echo "[4/7] Generating env file..."
+echo "[4/6] Generating env file..."
 
 # generate env file with battery name of the user's battery
 BATTERY_NAME=$(ls /sys/class/power_supply | grep BAT | head -n1 || true)
@@ -62,7 +62,7 @@ cat > "$TARGET_DIR/i3blocks.env" <<EOF
 BATTERY_NAME="${BATTERY_NAME:-BAT0}"
 EOF
 
-echo "[5/7] Injecting i3 bar config snippet into existing config file..."
+echo "[5/6] Injecting i3 bar config snippet into existing config file..."
 
 SNIPPET_FILE="$REPO_DIR/i3bar_snippet.conf"
 
@@ -148,7 +148,7 @@ if ! grep -q "i3blocks-unified START" "$I3_CONFIG"; then
 fi
 
 
-echo "[7/7] Reloading i3..."
+echo "[6/6] Reloading i3..."
 
 i3-msg reload >/dev/null || true
 i3-msg restart >/dev/null || true
