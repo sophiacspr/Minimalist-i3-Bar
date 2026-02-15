@@ -6,8 +6,6 @@ The setup focuses on a clean minimalist design using a black bar with white text
 
 The setup is designed to work with Ubuntu/Debian-based distributions, but should be easily adaptable to other Linux distributions as well by changing the package manager commands in the installation script and ensuring the required dependencies are adapted to the desired Linux distribution.
 
----
-
 ## Overview
 
 The bar looks as follows:
