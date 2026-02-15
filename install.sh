@@ -3,6 +3,13 @@
 SCRIPT_PATH="$(realpath "$0")"
 REPO_DIR="$(dirname "$SCRIPT_PATH")"
 
+# also pull from this repository for the blocks and i3 config snippet to get the newest version of the files
+
+if [ -d "$REPO_DIR/.git" ]; then
+    echo "[0/6] Updating repository..."
+    git -C "$REPO_DIR" pull --ff-only
+fi
+
 REQ_FILE="$REPO_DIR/requirements.apt"
 
 TARGET_DIR="$HOME/.config/i3blocks-unified"
