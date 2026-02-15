@@ -27,8 +27,9 @@ printf -v usage "%2d" "$usage"
 echo "CPU: ${usage}%"
 
 # Click action
-case "${BLOCK_BUTTON:-}" in
+case "${BLOCK_BUTTON" in
     1)
+        # dependency check
         if command -v gnome-system-monitor >/dev/null; then
             gnome-system-monitor >/dev/null 2>&1 &
         fi
