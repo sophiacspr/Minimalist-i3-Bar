@@ -5,13 +5,15 @@ This repository provides a simple i3blocks-based status bar configuration for th
 The setup focuses on a clean minimalist design using a black bar with white text not distracting the user with bright colors, while still providing a visually pleasing design.
 
 The setup is designed to work with Ubuntu/Debian-based distributions, but should be easily adaptable to other Linux distributions as well by changing the package manager commands in the installation script and ensuring the required dependencies are adapted to the desired Linux distribution.
+
 ---
 
 ## Overview
 
 The bar looks as follows:
 ![Minimalist i3 Bar](images/i3_bar.png)
-
+![Minimalist i3 Bar Detailed view 1](images/detailed_1.png)
+![Minimalist i3 Bar Detailed view 2](images/detailed_2.png)
 
 The bar is built using:
 
@@ -50,7 +52,8 @@ The individual scripts are located in `~/.config/i3blocks-unified/blocks/` and c
 
 ## Deinstallation
 For the deinstallation, run 
-```bash ~/.config/i3/i3blocks-unified/uninstall.sh
+```
+bash ~/.config/i3/i3blocks-unified/uninstall.sh
 ```
 This will restore the original i3 config file from the backup and remove the installed bar configuration and scripts from the user's config directory.
 
