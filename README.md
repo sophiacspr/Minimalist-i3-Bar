@@ -12,6 +12,7 @@ The bar looks as follows:
 ![Minimalist i3 Bar](images/i3_bar.png)
 
 Detailed view:
+
 ![Minimalist i3 Bar Detailed view 1](images/detailed_1.png)
 
 ![Minimalist i3 Bar Detailed view 2](images/detailed_2.png)
