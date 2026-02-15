@@ -49,11 +49,12 @@ After calling the install script, the bar should appear and is ready to be used.
 The individual scripts are located in `~/.config/i3blocks-unified/blocks/` and can be customized or extended as needed, e.g. if other functionalities for the clicks are desired.
 
 ## Deinstallation
-For the deinstallation, run 
+For the deinstallation, run from the cloned repository.
 ```
-bash ~/.config/i3/i3blocks-unified/uninstall.sh
+bash uninstall.sh
 ```
-This will restore the original i3 config file from the backup and remove the installed bar configuration and scripts from the user's config directory.
+This will restore the original i3 config file from the backup and remove the installed bar configuration and scripts from the user's config directory. Note, that if changes are made to the i3 config file (`~/.config/i3/config`) while the Minimalist i3 Bar is used, these then need to be reapplied, as the last config before the installation of the Minimalist i3 Bar is restored.
+Otherwise, it is possible to manually delete the inserted i3-bar-section from the i3 config file (`~/.config/i3/config`) and remove the directory `~/.config/i3blocks-unified/blocks/`
 
 ## Dependencies
 Dependencies are installed automatically upon calling the installation script.
